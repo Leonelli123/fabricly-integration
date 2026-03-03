@@ -1,0 +1,17 @@
+REGEX PATTERN FOR MAKE.COM TEXT PARSER
+=======================================
+
+Use this in: Tools → Text Parser → Match Pattern
+
+Pattern (case-insensitive):
+(?i)(Cotton Jersey|French Terry|Sweat Fabric|Ribbed Jersey|Ribbing|Cotton Lycra|Stretch Jersey|Interlock|Velour|Waffle Jersey|Cotton Canvas|Cotton Twill|Poplin|Muslin|Double Gauze|Linen|Viscose Jersey|Modal Jersey|Tencel Jersey|Softshell|Fleece|Corduroy)
+
+Text field:
+{{2.title}}
+
+After the Match Pattern module, add a Set Variable module:
+
+  Variable name: fabric_keyword
+  Value: {{ifempty(3.match; "Cotton Jersey")}}
+
+This defaults to "Cotton Jersey" if no regex match is found.
