@@ -1,0 +1,48 @@
+NON-EU COUNTRY CODES FOR ROUTER FILTER
+========================================
+
+Use these in Make.com Router filter conditions.
+
+Primary non-EU destinations (most common for Etsy fabric shops):
+US  - United States
+GB  - United Kingdom
+CA  - Canada
+AU  - Australia
+NO  - Norway (European but NOT EU)
+CH  - Switzerland (European but NOT EU)
+
+Secondary non-EU destinations:
+JP  - Japan
+NZ  - New Zealand
+SG  - Singapore
+KR  - South Korea
+HK  - Hong Kong
+TW  - Taiwan
+AE  - United Arab Emirates
+SA  - Saudi Arabia
+IL  - Israel
+TH  - Thailand
+BR  - Brazil
+MX  - Mexico
+IN  - India
+
+MAKE.COM FILTER SETUP
+=====================
+
+PATH 1 — EU Orders filter:
+  Field:     {{1.shipping_address.country_iso}}
+  Operator:  "Does not equal (case insensitive)"
+  Pattern:   Use "AND" conditions for each non-EU code
+
+  OR simpler approach — use "Matches pattern (case insensitive)":
+  Pattern:   ^(?!US|GB|CA|AU|NO|CH|JP|NZ|SG|KR|HK|TW|AE|SA|IL|TH|BR|MX|IN$)
+
+PATH 2 — Non-EU Orders filter:
+  Field:     {{1.shipping_address.country_iso}}
+  Operator:  "Matches pattern (case insensitive)"
+  Pattern:   ^(US|GB|CA|AU|NO|CH|JP|NZ|SG|KR|HK|TW|AE|SA|IL|TH|BR|MX|IN)$
+
+NOTE: If you ship to countries not on this list, add their ISO code.
+Full EU member list (these go through Path 1 — no customs needed):
+AT, BE, BG, HR, CY, CZ, DK, EE, FI, FR, DE, GR, HU, IE, IT, LV,
+LT, LU, MT, NL, PL, PT, RO, SK, SI, ES, SE
