@@ -1,0 +1,46 @@
+{
+  "order_number": "{{1.receipt_id}}",
+  "currency": "{{1.currency_code}}",
+  "ordered_at": "{{formatDate(1.creation_tsz; \"YYYY-MM-DD\")}}",
+  "source_name": "Etsy",
+  "receiver": {
+    "name":         "{{1.name}}",
+    "address1":     "{{1.shipping_address.first_line}}",
+    "address2":     "{{1.shipping_address.second_line}}",
+    "zipcode":      "{{1.shipping_address.zip}}",
+    "city":         "{{1.shipping_address.city}}",
+    "country_code": "{{1.shipping_address.country_iso}}",
+    "email":        "{{1.buyer_email}}",
+    "mobile":       "{{1.shipping_address.phone}}"
+  },
+  "order_lines": [
+    {
+      "item_name":  "{{5.B}}",
+      "quantity":   {{2.quantity}},
+      "unit_price": {{2.price}}
+    }
+  ],
+  "customs": {
+    "currency_code": "{{1.currency_code}}",
+    "contents_type": "merchandise",
+    "non_delivery":  "return",
+    "sender_info": {
+      "name":         "Fabricly / Jydsk Stoflager",
+      "address1":     "YOUR_ADDRESS_LINE_1",
+      "zipcode":      "YOUR_ZIPCODE",
+      "city":         "YOUR_CITY",
+      "country_code": "DK",
+      "vat_number":   "YOUR_CVR_NUMBER"
+    },
+    "goods": [
+      {
+        "content":        "{{5.B}}",
+        "quantity":       {{2.quantity}},
+        "unit_value":     {{2.price}},
+        "unit_weight":    500,
+        "country_code":   "DK",
+        "commodity_code": "{{replace(5.C; \".\"; \"\")}}"
+      }
+    ]
+  }
+}
