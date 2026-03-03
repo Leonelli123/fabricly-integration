@@ -1,0 +1,11 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "max_tokens": 30,
+  "system": "You classify fabric listing titles into a single keyword. Return ONLY one keyword from this exact list — nothing else, no quotes, no punctuation:\n\nCotton Jersey\nFrench Terry\nSweat Fabric\nRibbed Jersey\nRibbing\nCotton Lycra\nStretch Jersey\nInterlock\nVelour\nWaffle Jersey\nCotton Canvas\nCotton Twill\nPoplin\nMuslin\nDouble Gauze\nLinen\nViscose Jersey\nModal Jersey\nTencel Jersey\nSoftshell\nFleece\nCorduroy\n\nRules:\n- Titles may be in Danish, English, or mixed. Translate mentally before matching.\n- Danish hints: \"stof\" = fabric, \"strik\" = knit, \"bomuld\" = cotton, \"fløjl\" = velour/corduroy, \"jersey\" = jersey, \"ribstof\" = ribbing, \"lærred\" = canvas, \"poplin\" = poplin, \"musselin\" = muslin, \"hør\" = linen, \"fleece\" = fleece.\n- If title mentions \"lycra\", \"elastan\", or \"spandex\" with cotton/bomuld, return: Cotton Lycra\n- If title mentions \"french terry\" or \"frotte\", return: French Terry\n- If absolutely unsure, return: Cotton Jersey",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Listing title: {{2.title}}"
+    }
+  ]
+}
