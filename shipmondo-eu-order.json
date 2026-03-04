@@ -1,17 +1,16 @@
 {
   "order_number": "{{1.receipt_id}}",
-  "currency": "{{1.currency_code}}",
-  "ordered_at": "{{formatDate(1.creation_tsz; \"YYYY-MM-DD\")}}",
+  "currency": "DKK",
+  "ordered_at": "{{formatDate(1.create_timestamp; "YYYY-MM-DD")}}",
   "source_name": "Etsy",
   "receiver": {
     "name":         "{{1.name}}",
-    "address1":     "{{1.shipping_address.first_line}}",
-    "address2":     "{{1.shipping_address.second_line}}",
-    "zipcode":      "{{1.shipping_address.zip}}",
-    "city":         "{{1.shipping_address.city}}",
-    "country_code": "{{1.shipping_address.country_iso}}",
-    "email":        "{{1.buyer_email}}",
-    "mobile":       "{{1.shipping_address.phone}}"
+    "address1":     "{{1.first_line}}",
+    "address2":     "{{1.second_line}}",
+    "zipcode":      "{{1.zip}}",
+    "city":         "{{1.city}}",
+    "country_code": "{{1.country_iso}}",
+    "email":        "{{1.buyer_email}}"
   },
   "order_lines": [
     {
