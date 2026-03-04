@@ -26,11 +26,11 @@
     "non_delivery":  "return",
     "sender_info": {
       "name":         "Fabricly / Jydsk Stoflager",
-      "address1":     "YOUR_ADDRESS_LINE_1",
-      "zipcode":      "YOUR_ZIPCODE",
-      "city":         "YOUR_CITY",
+      "address1":     "Jupitervej 2",
+      "zipcode":      "7430",
+      "city":         "Ikast",
       "country_code": "DK",
-      "vat_number":   "YOUR_CVR_NUMBER"
+      "vat_number":   "16989495"
     },
     "goods": [
       {
@@ -44,3 +44,4 @@
     ]
   }
 }
+
